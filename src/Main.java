@@ -1,62 +1,74 @@
 public class Main {
     public static void main(String[] args) {
-        Employee[] employees = new Employee[10];
-        employees[0] = new Employee("Иванов Иван Иванович", 1, 100_000);
-        employees[1] = new Employee("Комарова Ольга Александровна", 2, 200_000);
-        employees[2] = new Employee("Ильных Константин Борисович", 3, 175_000);
-        employees[3] = new Employee("Макаров Алесандр Александрович", 4, 130_000);
-        employees[4] = new Employee("Петров Петр Иванович", 5, 150_000);
 
-
-
-
-
-        Employee.printFullEmployees(employees);
+        EmployeeBook employeeBook = new EmployeeBook();
+        employeeBook.printFullEmployees();
         printSeparator();
 
-        Employee.getTotalSalary(employees);
+        employeeBook.getTotalSalary();
         printSeparator();
 
-        Employee.findMinSalary(employees);
+        employeeBook.findMinSalary();
         printSeparator();
 
-        Employee.findMaxSalary(employees);
+        employeeBook.findMaxSalary();
         printSeparator();
 
-        Employee.getAverageSalary(employees);
+        employeeBook.getAverageSalary();
         printSeparator();
 
-        Employee.printFullNames(employees);
+        employeeBook.printFullNames();
         printSeparator();
 
-        Employee.indexSalariesPercent(employees,0.14);
-        Employee.printFullEmployees(employees);
+        employeeBook.indexSalariesPercent(0.14);
+        employeeBook.printFullEmployees();
         printSeparator();
 
-        Employee.getDepartamentMinSalary(employees,1);
+        employeeBook.getDepartamentMinSalary(1);
         printSeparator();
 
-        Employee.getDepartamentMaxSalary(employees,4);
+        employeeBook.getDepartamentMaxSalary(4);
         printSeparator();
 
-        Employee.getTotalDepartamentSalaries(employees,1);
+        employeeBook.getTotalDepartamentSalaries(1);
         printSeparator();
 
-        employees[5] = new Employee("Николаев Николай Николаевич",  1,  300_000);
-        Employee.getDepartamentAverageSalary(employees,1);
+        employeeBook.addNewProfileEmployee("Николаев Николай Николаевич",  1,  300_000);
+        employeeBook.getDepartamentAverageSalary(1);
         printSeparator();
 
-        Employee.indexDepartamentSalariesPercent(employees,1, 0.3);
+        employeeBook.indexDepartamentSalariesPercent(1, 0.3);
         printSeparator();
 
-        Employee.getDepartament(employees,1);
+        employeeBook.getDepartament(1);
         printSeparator();
 
-        Employee.getSalaryLess(employees, 180_000);
+        employeeBook.getSalaryLess(180_000);
         printSeparator();
-        Employee.getSalaryMore(employees,  160_000);
+
+        employeeBook.getSalaryMore(160_000);
+        printSeparator();
+
+        employeeBook.addNewProfileEmployee("Николаев Николай Николаевич",  1,  300_000);
+        employeeBook.addNewProfileEmployee("Николаев Николай Николаевич",  2,  180_000);
+        employeeBook.addNewProfileEmployee("Николаев Николай Николаевич",  3,  120_000);
+        employeeBook.addNewProfileEmployee("Николаев Николай Николаевич",  4,  100_000);
+        employeeBook.printFullEmployees();
+        printSeparator();
+
+        employeeBook.deleteProfileEmployee(5);
+        employeeBook.deleteProfileEmployee(6);
+        employeeBook.deleteProfileEmployee(7);
+        employeeBook.deleteProfileEmployee(8);
+        employeeBook.deleteProfileEmployee(9);
+        employeeBook.printFullEmployees();
+        printSeparator();
+
+        employeeBook.getProfileEmployees(3);
+        employeeBook.getProfileEmployees(9);
         printSeparator();
     }
+
 
 
     public static void printSeparator()  {
